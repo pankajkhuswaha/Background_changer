@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+       
+       
+    </style>
+    <nav>
+        <ul>
+            <li>Background</li>
+            <!-- <li><a href="bgColor.html">Simple</a></li> -->
+            <li><a href="hexa.html">Hexa</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="textBody">
+             <span> Your Background Color:</span>
+            <span id="color">Red</span>
+        </div>
+        <button id="btn">Click Me </button>
+    </div>
+   
+    <script>
+        var hexaColor = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E"]
+        var button = document.getElementById("btn");
+        var color = document.getElementById("color");
+        var spanbox = document.querySelector(".container");
+        button.addEventListener('click', function(){
+            var sharp="#";
+            for(var i =0; i < 6 ; i++){
+            sharp += hexaColor[randomNumber()];
+             }
+            document.body.style.backgroundColor=sharp;
+            spanbox.style.backgroundColor=sharp;
+            color.textContent=sharp;
+        });
+        function randomNumber(){
+            var number =Math.floor(Math.random()*hexaColor.length);
+            // console.log(number)
+            return number;
+        }
+    </script>
+
+</body>
+
+</html>
